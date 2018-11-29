@@ -6,6 +6,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import {Grid , Row , Col} from 'react-flexbox-grid';
 import './App.css';
 import LocationListContainer from './conteiners/LocationListContainer';
+import ForecastExtended from './conteiners/ForecastExtendedContainer';
+
 import ForecastExtenden from './components/ForecastExtended';
 import {store} from './store';
 import {connect} from 'react-redux';
@@ -21,11 +23,6 @@ const cities = [
 
 
 class App extends Component {
-
-  constructor(){
-    super();
-    this.state = {city : null};
-  }
 
   render() {
     return (
@@ -46,9 +43,7 @@ class App extends Component {
           <Col xs={12} md={6}>
             <Paper zDepth={4}>
               <div className="details">
-              { this.state.city ?
-                <ForecastExtenden city={this.state.city}></ForecastExtenden>
-                : ''}
+                <ForecastExtended></ForecastExtended>
               </div>
             </Paper>
           </Col>
