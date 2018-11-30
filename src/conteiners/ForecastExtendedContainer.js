@@ -6,10 +6,12 @@ class ForecastExtendedContainer extends Component {
     render() {
         const { city, forecastData } = this.props;
         return (
-            city &&
+            city ?
                 <ForecastExtended city={city} forecastData={forecastData}/>
+            : null
+            
         );
     }
 }
-const mapStateProps = ({city}) => ({city});
-export default connect(mapStateProps,null)(ForecastExtendedContainer);
+const mapStateToProps = state => ({city:state.city});
+export default connect(mapStateToProps,null)(ForecastExtendedContainer);

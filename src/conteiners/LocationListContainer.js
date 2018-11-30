@@ -10,15 +10,11 @@ class LocationListContainer extends Component {
     }
 
     render() {
+        console.log(this.props.cities);
         return (
             <LocationList  cities={this.props.cities} onSelectedLocation={this.handledSelectedLocationClick}></LocationList>
         );
     }
-}
-
-LocationListContainer.propTypes = {
-    setCity: PropTypes.func.isRequired,
-    cities:PropTypes.isArray
 }
 
 
